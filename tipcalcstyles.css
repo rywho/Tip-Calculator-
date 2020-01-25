@@ -1,0 +1,37 @@
+html {
+	height: 100%;
+}
+
+body {
+	background-image: linear-gradient(#FF8385, #FFFB83, #4DCCDE)
+}
+
+.content {
+	max-width: 500px;
+	margin: auto;
+	font-family: "Arial", Helvetica, sans-serif;
+	padding: 15px;
+}
+
+#box {
+ 	height: 190px;
+ 	width: 350px;
+ 	margin: 100px auto;
+ 	padding: 50px;
+ 	background: #F7F2F6;
+ 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+ 	border-radius: 20px;
+ 	-webkit-border-radius: 20px;
+ 	text-align: center
+}
+
+.button {
+	border-radius: 8px;
+	border: 2px;
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+}
+
+.button {background-image: linear-gradient(to right, #FF8385 0%, #FFFB83 51%, #4DCCDE 100%)}
+.button:hover { background-position: right center; }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>
+    	Tip Calculator
+    </title>
+    <link rel="stylesheet" type="text/css" href="tipcalcstyles.css">
+  </head>
+  
+  <body>
+  <div class="content">
+  <div id="box">
+  	<h1>Tip Calculator</h1> 
+  	
+    <form>
+	<strong> Bill Total: </strong> $ 
+		<input id="total" type="number" name="Total">
+	<br>
+	<br>
+	<strong> Rate Your Service/Pick Tip Amount: </strong>
+		<select onclick="goodbye()" id="tip">
+			<option>Click to select</option>
+ 		 	<option value="1.05">5% : Not good</option>
+ 		 	<option value="1.1">10% : Good</option>
+ 		 	<option value="1.15">15% : Great</option>
+ 		 	<option value="1.2">20% : Wow</option>
+ 			<option value="1.25">25% : Amazing</option>
+ 		 	<option value="1.3">30% : Beyond Expectations</option>
+		</select>
+	<br>	
+	<br>
+	<button onclick="calculate()" type="button" class="button" >Calculate Tip!</button> 
+	</form>
+</div>
+	<h3 id="tip_total">
+		Tip Total:
+	</h3>
+	<h3 id="bill_total">
+		Bill Total:
+	</h3>
+</div>
+  </body>
+    <script>
+	function calculate() {
+		var amount = document.getElementById("total").value;
+		var e = document.getElementById("tip");
+		var tip_amount = e.options[e.selectedIndex].value;
+		//alert("$" + Math.round(tip_amount * amount * 100) / 100)
+		var x = Math.round(tip_amount * amount * 100) / 100
+		document.getElementById("bill_total").innerHTML = "Bill Total:" + (" $" + x.toFixed(2));
+		document.getElementById("tip_total").innerHTML = "Tip Total:" + (" $" + (Math.round(  (x - amount)  *  100  ) / 100).toFixed(2));
+	}
+	/*var first = true;
+	function goodbye() {
+		if (first) { 	
+			var e = document.getElementById("tip");
+			e.remove(0);
+			first = false;
+		}*/
+	document.getElementById("tip").options[0].disabled = true;
+	</script>
+</html>
